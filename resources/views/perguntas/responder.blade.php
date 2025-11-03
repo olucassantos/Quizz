@@ -18,87 +18,90 @@
                         resultado ao final!
                     </p>
 
-                    @foreach($perguntas as $pergunta)
-                        <div class="card mb-4">
-                            <h2>{{ $pergunta->texto }}</h2>
+                    <form method="POST" action="{{ route('quizz.responder') }}">
+                        @csrf
+                        @foreach($perguntas as $pergunta)
+                            <div class="card mb-4">
+                                <h2>{{ $pergunta->texto }}</h2>
 
-                            <div class="p-2">
-                                <div class="d-flex justify-content-start gap-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
-                                        id="opcao1_{{ $pergunta->id }}"
-                                        value="A"
-                                    >
+                                <div class="p-2">
+                                    <div class="d-flex justify-content-start gap-2">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="{{ $pergunta->id }}"
+                                            id="opcao1_{{ $pergunta->id }}"
+                                            value="A"
+                                        >
 
-                                    <label
-                                        class="form-check-label"
-                                        for="opcao1_{{ $pergunta->id }}"
-                                    >
-                                        {{ $pergunta->opcao_a }}
-                                    </label>
-                                </div>
+                                        <label
+                                            class="form-check-label"
+                                            for="opcao1_{{ $pergunta->id }}"
+                                        >
+                                            {{ $pergunta->opcao_a }}
+                                        </label>
+                                    </div>
 
-                                <div class="d-flex justify-content-start gap-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
-                                        id="opcao1_{{ $pergunta->id }}"
-                                        value="B"
-                                    >
+                                    <div class="d-flex justify-content-start gap-2">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="{{ $pergunta->id }}"
+                                            id="opcao1_{{ $pergunta->id }}"
+                                            value="B"
+                                        >
 
-                                    <label
-                                        class="form-check-label"
-                                        for="opcao1_{{ $pergunta->id }}"
-                                    >
-                                        {{ $pergunta->opcao_b }}
-                                    </label>
-                                </div>
+                                        <label
+                                            class="form-check-label"
+                                            for="opcao1_{{ $pergunta->id }}"
+                                        >
+                                            {{ $pergunta->opcao_b }}
+                                        </label>
+                                    </div>
 
-                                <div class="d-flex justify-content-start gap-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
-                                        id="opcao1_{{ $pergunta->id }}"
-                                        value="C"
-                                    >
+                                    <div class="d-flex justify-content-start gap-2">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="{{ $pergunta->id }}"
+                                            id="opcao1_{{ $pergunta->id }}"
+                                            value="C"
+                                        >
 
-                                    <label
-                                        class="form-check-label"
-                                        for="opcao1_{{ $pergunta->id }}"
-                                    >
-                                        {{ $pergunta->opcao_c }}
-                                    </label>
-                                </div>
+                                        <label
+                                            class="form-check-label"
+                                            for="opcao1_{{ $pergunta->id }}"
+                                        >
+                                            {{ $pergunta->opcao_c }}
+                                        </label>
+                                    </div>
 
-                                <div class="d-flex justify-content-start gap-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="pergunta_{{ $pergunta->id }}"
-                                        id="opcao1_{{ $pergunta->id }}"
-                                        value="D"
-                                    >
+                                    <div class="d-flex justify-content-start gap-2">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="{{ $pergunta->id }}"
+                                            id="opcao1_{{ $pergunta->id }}"
+                                            value="D"
+                                        >
 
-                                    <label
-                                        class="form-check-label"
-                                        for="opcao1_{{ $pergunta->id }}"
-                                    >
-                                        {{ $pergunta->opcao_d }}
-                                    </label>
+                                        <label
+                                            class="form-check-label"
+                                            for="opcao1_{{ $pergunta->id }}"
+                                        >
+                                            {{ $pergunta->opcao_d }}
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
-                    <div class="d-flex justify-content-center">
-                        <button class="btn btn-primary btn-lg">
-                            Enviar Respostas
-                        </button>
-                    </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-primary btn-lg">
+                                Enviar Respostas
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
